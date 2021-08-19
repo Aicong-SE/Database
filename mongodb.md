@@ -69,7 +69,62 @@ rm -r /var/log/mongodb
 rm -r /var/lib/mongo
 ```
 
+## Ubuntu 20.04环境安装
 
+1. 导入包管理系统使用的公钥
+
+```
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+返回: ok
+```
+
+2. 为 MongoDB 创建一个列表文件
+
+```
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+```
+
+3. 重新加载本地包数据库
+
+```
+sudo apt-get update
+```
+
+4. 安装 MongoDB 包
+
+```
+sudo apt-get install -y mongodb-org
+```
+
+5. 启动 MongoDB
+
+```
+sudo systemctl start mongod
+```
+
+6. 验证 MongoDB 是否已成功启动
+
+```
+sudo systemctl status mongod
+```
+
+7. 停止 MongoDB
+
+```
+sudo systemctl stop mongod
+```
+
+8. 重启 MongoDB
+
+```
+sudo systemctl restart mongod
+```
+
+9. 开始使用 MongoDB
+
+```
+mongosh
+```
 
 # 命令行使用
 
