@@ -126,6 +126,18 @@ sudo systemctl restart mongod
 mongosh
 ```
 
+数据目录： /var/lib/mongodb
+
+日志目录： /var/log/mongodb
+
+配置文件： /etc/mongod.conf
+
+```
+https://docs.mongodb.com/manual/reference/configuration-options/#std-label-conf-file
+```
+
+
+
 # 命令行使用
 
 ```shell
