@@ -153,3 +153,27 @@ https://docs.mongodb.com/manual/reference/configuration-options/#std-label-conf-
 > db.help();
 ```
 
+## 创建用户
+
+```shell
+> use database_name  # 进入数据库
+> db.createUser({  # 创建数据库
+	user: "user_name",  # 用户名
+	pwd: "password",  # 密码
+	roles: [{role: "read", db: "database_name"}, "read"]  # 权限 可指定库，不指定则指定当前库
+})
+```
+
+| role                 | 说明                                   |
+| -------------------- | -------------------------------------- |
+| read                 | 可读                                   |
+| readWrite            | 可读可写                               |
+| dbAdmin              | 允许管理指定数据库                     |
+| userAdmin            | 允许在指定数据库中创建和修改用户       |
+| clusterAdmin         | 允许对整个集群或数据库系统进行管理操作 |
+| readAnyDatabase      | 可读所有数据库，除config 和 local      |
+| readWriteAnyDatabase | 可读可写所有数据库，除config 和 local  |
+| userAdminAnyDatabase | 允许在所有数据库中创建和修改用户       |
+| dbAdminAnyDatabase   | 允许管理所有数据库                     |
+| root                 | 超级账户，超级权限                     |
+
