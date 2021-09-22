@@ -153,7 +153,7 @@ processManagement:
 ```shell
 net:
 	port: 27017   # 端口号
-	bindIp: 127.0.0.1  # 绑定外网多个 IP 用逗号分割
+	bindIp: 127.0.0.1  # 设置为0.0.0.0，允许外网访问， 若想设置白名单，请使用防火墙限制
 	maxIncomingConnections: 65536  # 进程允许最大连接数
 	wireObjectCheck: true  # 当客户端写入数据时，检测数据的有效性（BSON）
 	ipv6: false
